@@ -1,0 +1,75 @@
+<!-- views/index.ejs -->
+<%- include('partials/header', { session: session }) %>
+<div class="container mt-4">
+    <!-- Hero Section -->
+    <div class="jumbotron jumbotron-fluid bg-primary text-white rounded">
+        <div class="container">
+            <h1 class="display-4">Welcome to My Blog</h1>
+            <p class="lead">Explore the latest posts and share your thoughts with the world.</p>
+            <a class="btn btn-light btn-lg" href="/new" role="button">Create a New Post</a>
+        </div>
+    </div>
+
+    <% if (searchQuery) { %>
+        <h3>Search Results for "<%= searchQuery %>":</h3>
+        <% if (posts.length === 0) { %>
+            <p>No posts found.</p>
+        <% } %>
+    <% } else { %>
+        <!-- Posts List -->
+        <h2 class="mb-4">Latest Posts</h2>
+    <% } %>
+        <div class="row">
+            <% posts.forEach(post => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <% if (post.image) { %>
+                            <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= post.title %></h5>
+                            <p class="card-text">
+                                <%= post.content.length > 100 ? post.content.slice(0, 100) + '...' : post.content %>
+                                <% if (post.content.length > 100) { %>
+                                    <a href="/post/<%= post.id %>" class="btn btn-outline-primary btn-sm">
+                                        <i class="fas fa-chevron-right"></i> Continue reading
+                                    </a>
+                                <% } %>
+                            </p>
+                            <p class="card-text"><small class="text-muted">Posted on <%= new Date(post.date).toLocaleDateString() %><br/>by <%= post.author %></small></p>
+                            <% if (post.author === session.user) { %> <!-- Check if current user is the author -->
+                                <a href="/edit/<%= post.id %>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="/delete/<%= post.id %>" class="btn btn-danger btn-sm">Delete</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+    <!-- Pagination controls (if implemented) -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <% if (currentPage > 1) { %>
+                <li class="page-item">
+                    <a class="page-link" href="?page=<%= currentPage - 1 %>&search=<%= searchQuery %>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <% } %>
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <li class="page-item <%= i === currentPage ? 'active' : '' %>">
+                    <a class="page-link" href="?page=<%= i %>&search=<%= searchQuery %>"><%= i %></a>
+                </li>
+            <% } %>
+            <% if (currentPage < totalPages) { %>
+                <li class="page-item">
+                    <a class="page-link" href="?page=<%= currentPage + 1 %>&search=<%= searchQuery %>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</div>
+<%- include('partials/footer') %>

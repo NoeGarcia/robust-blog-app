@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "London✈",
+    "content": "Once again I feel like going to London just like last year...when I also wanted to go 😜",
+    "image": "/images/london.jpg",
+    "date": "2024-07-17T00:22:35.345Z",
+    "author": "admin"
+  },
+  {
+    "id": 2,
+    "title": "Soccer time!⚽",
+    "content": "Well, years have passed since the last time I played soccer and I only remember that during a tournament they always beat us, but I still had a lot of fun. I even scored goals being that I played in the defense position.",
+    "image": "/images/soccer.jpg",
+    "date": "2024-07-17T00:37:46.594Z",
+    "author": "admin"
+  },
+  {
+    "id": 3,
+    "title": "Home 🏡",
+    "content": "Okay, okay, this is not my house🤭, but I would have liked it to be, it's nice right?",
+    "image": "/images/house.jpg",
+    "date": "2024-07-17T00:44:31.713Z",
+    "author": "admin"
+  },
+  {
+    "id": 5,
+    "title": "I bought this car!!🚗",
+    "content": "I bought it, drive it, enjoi it and finally...I woke up. fucking nodemon!!",
+    "image": "/images/1721230772724.jpg",
+    "date": "2024-07-17T15:39:32.741Z",
+    "author": "guest"
+  },
+  {
+    "id": 6,
+    "title": "I found a little cat😺",
+    "content": "If the neighbour's cat comes to my house by it's own will, rest in my house, eats in my house too...can it be considered mine right?",
+    "image": "/images/1721247033424.jpg",
+    "date": "2024-07-17T20:10:33.450Z",
+    "author": "admin"
+  },
+  {
+    "id": 7,
+    "title": "Dubai🤩",
+    "content": "I have never been at Dubai. But it looks great in photos!😋",
+    "image": "/images/1721247208923.jpg",
+    "date": "2024-07-17T20:13:28.957Z",
+    "author": "guest"
+  },
+  {
+    "id": 8,
+    "title": "Testing Pagination",
+    "content": "This post is just to test the posts pagination in the blog.",
+    "image": null,
+    "date": "2024-07-17T20:14:35.841Z",
+    "author": "guest"
+  },
+  {
+    "id": 9,
+    "title": "new post",
+    "content": "xzfgsdfgdsghdsgfdg",
+    "image": "/images/1721247920906.jpg",
+    "date": "2024-07-17T20:25:20.946Z",
+    "author": "guest"
+  }
+]
